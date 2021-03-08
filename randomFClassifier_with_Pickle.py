@@ -67,10 +67,10 @@ print(f"This is test_dataset: {test_dataset}")
 pickle_open = open("stocks_news_model.pickle", "rb")
 
 """Load pickle"""
-randomClassifier = pickle.load(pickle_open)
+randomForestClassifier = pickle.load(pickle_open)
 
 """Predict"""
-prediction = randomClassifier.predict(test_dataset)
+prediction = randomForestClassifier.predict(test_dataset)
 
 """ Print the result """
 print(prediction)
