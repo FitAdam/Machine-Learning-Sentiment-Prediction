@@ -2,8 +2,8 @@
 
 ## Machine Learning Classification (randomClassifier)
 
-0 -> stock prize will not increase on the next day
-1 -> stok prize will increse on next day
+#### 0 -> stock prize will not increase on the next day
+#### 1 -> stock prize will increse on next day
 
 ### Description
 
