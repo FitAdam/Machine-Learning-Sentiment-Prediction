@@ -14,16 +14,16 @@ df_test = pd.read_csv(r'C:\Users\atuta\Documents\Projects\Stocks Machine Learnin
 
 """Divide the data into sets"""
 
-#divide in train and test
+#divide in training_dataset and test
 # Prepare the groups for tests. 
-train = df #df[df['Date']<'20150101']
+training_dataset = df #df[df['Date']<'20150101']
 test = df_test #df[df['Date'] > '20141231']
 
 """Prepering data"""
 
 # remove punctuation
 # apart from alphabets we will replace every character with blank
-data = train.iloc[:, 2:27]
+data = training_dataset.iloc[:, 2:27]
 data.replace("[^a-zA-Z]", " ", regex=True, inplace=True)
 
 # Renaming the columns
@@ -51,9 +51,9 @@ for row in range(0, len(data.index)):
 countVector = CountVectorizer(ngram_range=(2,2))
 #ngram(2,2) means it will combine the 2 words together and assign the value
 
-trainDataset = countVector.fit_transform(headlines)
+training_datasetDataset = countVector.fit_transform(headlines)
 
-"""Preparing testing and training"""
+"""Preparing testing and training_dataseting"""
 
 testTransform =[]
 for row in range(0, len(test.index)):
@@ -72,5 +72,7 @@ prediction = randomForestClassifier.predict(test_dataset)
 
 """ Print the result """
 print(prediction) # if true the stocks will go up, otherwise down
+predictions = (predictions > 0.59)
+print(predictions)
 
 
